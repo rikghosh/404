@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>404</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+<script>
+
+    function preload() {
+
+    }
+
+    var xpos = [];
+    var ypos = [];
+
+	function setup(){
+		createCanvas(window.innerWidth, window.innerHeight);
+
+        for (var i = 0; i < 100; i++) {
+            xpos[i] = random(width*2);
+            ypos[i] = floor(random(height));
+        }
+
+
+	}
+			
+	function draw(){
+
+        fill(255);
+        background('white');
+        textAlign(LEFT);
+        fill("#68880720");
+        textFont("lekton");
+
+
+        textSize(100)
+
+        for (var i = 0; i < 100; i++) {
+            text('404', xpos[i], ypos[i]);
+            xpos[i] -= 1;
+            if(xpos[i] <= -200) {
+                xpos[i] = width + 10;
+            }
+            if (ypos[i] < mouseY + 10 && ypos[i] > mouseY - 10) {
+                ypos[i] -= 10;
+            }
+            if(ypos[i] <= 0) {
+                ypos[i] = random(height);
+            }
+
+        }
+        
+        textSize(20);
+        textAlign(CENTER);
+        fill('black');
+        textFont('helvetica')
+        for (var i = 0; i < 5; i++) {
+            if (i % 2 == 0) {
+                text('lost? click!', map(i, 0, 4, 80, width - 80), map(i, 0, 4, 40, height - 40))
+            } else {
+                text('rikghosh.com', map(i, 4, 0, 80, width - 80), map(i, 0, 4, 40, height - 40))
+            }
+            
+        }
+
+        fill("#e8e8e8")
+        noStroke();
+        rect(0, mouseY, width, 1)
+
+        
+
+
+    }
+
+    function mouseClicked() {
+        console.log('hello')
+        window.open('https://www.rikghosh.com', "_self")
+    }
+
+
+
+</script>
+
+<style>
+    body {
+        padding: 0; 
+        margin: 0; 
+        cursor: url('http://rikghosh.com/wp-content/uploads/2021/02/cursor_green.png') 8 8, auto !important;
+    } 
+</style>
+</head>
+<body>
+
+</body>
+</html>
