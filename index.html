@@ -57,15 +57,16 @@
         textSize(20);
         textAlign(CENTER);
         fill('black');
-        textFont('helvetica')
-        for (var i = 0; i < 5; i++) {
-            if (i % 2 == 0) {
-                text('lost? click!', map(i, 0, 4, 80, width - 80), map(i, 0, 4, 40, height - 40))
-            } else {
-                text('rikghosh.com', map(i, 4, 0, 80, width - 80), map(i, 0, 4, 40, height - 40))
-            }
+        textFont('helvetica');
+        text('Wrong turn?', width/2, 250);
+        // for (var i = 0; i < 5; i++) {
+        //     if (i % 2 == 0) {
+        //         text('lost? click!', map(i, 0, 4, 80, width - 80), map(i, 0, 4, 40, height - 40))
+        //     } else {
+        //         text('rikghosh.com', map(i, 4, 0, 80, width - 80), map(i, 0, 4, 40, height - 40))
+        //     }
             
-        }
+        // }
 
         fill("#e8e8e8")
         noStroke();
