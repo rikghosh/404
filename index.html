@@ -16,6 +16,7 @@
 
     var xpos = [];
     var ypos = [];
+    var speed = [];
 
 	function setup(){
 		createCanvas(window.innerWidth, window.innerHeight);
@@ -23,6 +24,7 @@
         for (var i = 0; i < 100; i++) {
             xpos[i] = random(width*2);
             ypos[i] = floor(random(height));
+	    speed[i] = random(-0.5,0.5);
         }
 
 
@@ -41,7 +43,7 @@
 
         for (var i = 0; i < 100; i++) {
             text('404', xpos[i], ypos[i]);
-            xpos[i] -= 1;
+            xpos[i] -= 1 + speed[i];
             if(xpos[i] <= -200) {
                 xpos[i] = width + 10;
             }
